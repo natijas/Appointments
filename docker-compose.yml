@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql:
+    container_name: wizyty_sql
+    image: mariadb:latest
+    environment:
+      MARIADB_USER: 'test'
+      MARIADB_PASSWORD: '1234'
+      MARIADB_ROOT_PASSWORD: 'admin'
+    volumes:
+      - wizyty_mysql_volume:/var/lib/mysql
+    network_mode: "host"
+volumes:
+  wizyty_mysql_volume:
